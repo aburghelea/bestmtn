@@ -1,6 +1,12 @@
-*.class
+/target
+/.classpath
+/.pmd
+/.pmdruleset
+/.project
+/.settings
+/.idea
+.idea/
+*.iml
+atlassian-ide-plugin.xml
 
-# Package Files #
-*.jar
-*.war
-*.ear
+target/
