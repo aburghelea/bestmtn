@@ -3,6 +3,12 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+    <parent>
+        <artifactId>webserver</artifactId>
+        <groupId>ro.endava.bestmarathon</groupId>
+        <version>0.1.0</version>
+    </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <artifactId>httpserversync</artifactId>
     <groupId>ro.endava.bestmarathon</groupId>
@@ -14,6 +20,7 @@
         <org.slf4j-version>1.5.10</org.slf4j-version>
         <maven-assembly-plugin-version>2.2.1</maven-assembly-plugin-version>
     </properties>
+    
     <build>
         <finalName>syncwebserver</finalName>
         <plugins>
