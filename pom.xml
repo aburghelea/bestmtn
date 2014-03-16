@@ -5,7 +5,11 @@
 
     <groupId>ro.endava.bestm</groupId>
     <artifactId>returning-system</artifactId>
+    <packaging>pom</packaging>
     <version>0.1.0</version>
+    <modules>
+        <module>httpserversync</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
