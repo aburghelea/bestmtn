@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>3548</showid>
+<showname>Firefly</showname>
+<showlink>http://tvrage.com/Firefly</showlink>
+<seasons>1</seasons>
+<started>2002</started>
+<startdate>Sep/20/2002</startdate>
+<ended>Dec/20/2002</ended>
+<origin_country>US</origin_country>
+<status>Canceled</status>
+<classification>Scripted</classification>
+<genres><genre>Action</genre><genre>Adventure</genre><genre>Sci-Fi</genre></genres>
+<runtime>60</runtime>
+<network  country="US">FOX</network>
+<airtime>20:00</airtime>
+<airday>Friday</airday>
+<timezone>GMT-5 -DST</timezone>
+</Showinfo>

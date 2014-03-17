@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>5145</showid>
+<showname>Seinfeld</showname>
+<showlink>http://tvrage.com/Seinfeld</showlink>
+<seasons>9</seasons>
+<started>1989</started>
+<startdate>Jul/05/1989</startdate>
+<ended>May/14/1998</ended>
+<origin_country>US</origin_country>
+<status>Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Comedy</genre></genres>
+<runtime>30</runtime>
+<network  country="US">NBC</network>
+<airtime>12:00</airtime>
+<timezone>GMT-5 -DST</timezone>
+</Showinfo>

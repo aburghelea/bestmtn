@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>8077</showid>
+<showname>Planet Earth</showname>
+<showlink>http://tvrage.com/Planet_Earth</showlink>
+<seasons>1</seasons>
+<started>2006</started>
+<startdate>Mar/05/2006</startdate>
+<ended>Dec/10/2006</ended>
+<origin_country>UK</origin_country>
+<status>Canceled/Ended</status>
+<classification>Documentary</classification>
+<genres><genre>Family</genre></genres>
+<runtime>60</runtime>
+<network  country="UK">BBC one</network>
+<airtime>21:00</airtime>
+<airday>Sunday</airday>
+<timezone>GMT+0 -DST</timezone>
+<akas><aka country="NL">Wildlife</aka></akas>
+</Showinfo>

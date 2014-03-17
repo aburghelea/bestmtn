@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>23953</showid>
+<showname>Episodes</showname>
+<showlink>http://tvrage.com/Episodes</showlink>
+<seasons>3</seasons>
+<started>2011</started>
+<startdate>Jan/09/2011</startdate>
+<ended></ended>
+<origin_country>US</origin_country>
+<status>Returning Series</status>
+<classification>Scripted</classification>
+<genres><genre>Comedy</genre></genres>
+<runtime>30</runtime>
+<network  country="US">SHOWTIME</network>
+<airtime>22:30</airtime>
+<airday>Sunday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka country="PL">Odcinki</aka></akas>
+</Showinfo>

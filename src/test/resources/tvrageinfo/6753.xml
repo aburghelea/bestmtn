@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>6753</showid>
+<showname>Top Gear</showname>
+<showlink>http://tvrage.com/Top_Gear</showlink>
+<seasons>21</seasons>
+<started>2002</started>
+<startdate>Oct/20/2002</startdate>
+<ended></ended>
+<origin_country>UK</origin_country>
+<status>Returning Series</status>
+<classification>Reality</classification>
+<genres><genre></genre><genre>Automobiles/Vehicles</genre><genre>Comedy</genre></genres>
+<runtime>60</runtime>
+<network  country="UK">BBC TWO</network>
+<airtime>20:00</airtime>
+<airday>Sunday</airday>
+<timezone>GMT+0 -DST</timezone>
+<akas><aka country="RU">Топ Гир</aka></akas>
+</Showinfo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>26615</showid>
+<showname>Downton Abbey</showname>
+<showlink>http://tvrage.com/Downton_Abbey</showlink>
+<seasons>4</seasons>
+<started>2010</started>
+<startdate>Sep/26/2010</startdate>
+<ended></ended>
+<origin_country>UK</origin_country>
+<status>Returning Series</status>
+<classification>Scripted</classification>
+<genres><genre>Drama</genre><genre>Family</genre><genre>History</genre></genres>
+<runtime>60</runtime>
+<network  country="UK">itv</network>
+<airtime>21:00</airtime>
+<airday>Sunday</airday>
+<timezone>GMT+0 -DST</timezone>
+</Showinfo>

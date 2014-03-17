@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>4004</showid>
+<showname>It's Always Sunny in Philadelphia</showname>
+<showlink>http://tvrage.com/Its_Always_Sunny_in_Philadelphia</showlink>
+<seasons>10</seasons>
+<started>2005</started>
+<startdate>Aug/04/2005</startdate>
+<ended></ended>
+<origin_country>US</origin_country>
+<status>Returning Series</status>
+<classification>Scripted</classification>
+<genres><genre>Comedy</genre></genres>
+<runtime>30</runtime>
+<network  country="US">FXX</network>
+<airtime>22:00</airtime>
+<airday>Wednesday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka>IASIP</aka><aka country="PL">U nas w Filadelfii</aka><aka country="RU">В Филадельфии всегда солнечно</aka><aka country="BY">У Філадэльфіі заўсёды сонечна</aka></akas>
+</Showinfo>

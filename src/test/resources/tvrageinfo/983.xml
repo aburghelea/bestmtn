@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>983</showid>
+<showname>Fruits Basket</showname>
+<showlink>http://tvrage.com/shows/id-983</showlink>
+<seasons>1</seasons>
+<started>2001</started>
+<startdate>Jul/05/2001</startdate>
+<ended>Dec/27/2001</ended>
+<origin_country>JP</origin_country>
+<status>Canceled/Ended</status>
+<classification>Animation</classification>
+<genres><genre>Anime</genre><genre>Comedy</genre><genre>Drama</genre><genre>Fantasy</genre></genres>
+<runtime>25</runtime>
+<network  country="JP">TV Tokyo</network>
+<airtime>12:00</airtime>
+<timezone>GMT+9 -DST</timezone>
+</Showinfo>

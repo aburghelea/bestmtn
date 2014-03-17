@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>5047</showid>
+<showname>Rome</showname>
+<showlink>http://tvrage.com/Rome</showlink>
+<seasons>2</seasons>
+<started>2005</started>
+<startdate>Aug/28/2005</startdate>
+<ended>Mar/25/2007</ended>
+<origin_country>US</origin_country>
+<status>Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Action</genre><genre>Adventure</genre><genre>Drama</genre></genres>
+<runtime>60</runtime>
+<network  country="US">HBO</network>
+<airtime>21:00</airtime>
+<airday>Sunday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka country="DE">Rom</aka><aka country="LT">Roma</aka><aka country="PL">Rzym</aka></akas>
+</Showinfo>

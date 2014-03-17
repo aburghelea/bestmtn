@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>6206</showid>
+<showname>The Sopranos</showname>
+<showlink>http://tvrage.com/The_Sopranos</showlink>
+<seasons>6</seasons>
+<started>1999</started>
+<startdate>Jan/10/1999</startdate>
+<ended>Jun/10/2007</ended>
+<origin_country>US</origin_country>
+<status>Canceled/Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Drama</genre></genres>
+<runtime>60</runtime>
+<network  country="US">HBO</network>
+<airtime>21:00</airtime>
+<airday>Sunday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka country="DE">Die Sopranos</aka><aka country="BR">Família Soprano</aka><aka country="HU">Maffiózók</aka><aka country="PL">Rodzina Soprano</aka><aka country="LT">Sopranai: Mafijos kronika</aka><aka country="RU">Клан Сопрано</aka></akas>
+</Showinfo>

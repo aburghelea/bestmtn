@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>16432</showid>
+<showname>GREEK</showname>
+<showlink>http://tvrage.com/Greek</showlink>
+<seasons>4</seasons>
+<started>2007</started>
+<startdate>Jul/09/2007</startdate>
+<ended>Mar/07/2011</ended>
+<origin_country>US</origin_country>
+<status>Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Comedy</genre><genre>Drama</genre></genres>
+<runtime>60</runtime>
+<network  country="US">ABC Family</network>
+<airtime>21:00</airtime>
+<airday>Monday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka>Greek</aka><aka country="US">GRΣΣK</aka><aka country="FI">Kampus Greek</aka></akas>
+</Showinfo>

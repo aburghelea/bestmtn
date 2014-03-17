@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>7926</showid>
+<showname>Dexter</showname>
+<showlink>http://tvrage.com/Dexter</showlink>
+<seasons>8</seasons>
+<started>2006</started>
+<startdate>Oct/01/2006</startdate>
+<ended>Sep/22/2013</ended>
+<origin_country>US</origin_country>
+<status>Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Crime</genre><genre>Drama</genre><genre>Mystery</genre></genres>
+<runtime>60</runtime>
+<network  country="US">SHOWTIME</network>
+<airtime>21:00</airtime>
+<airday>Sunday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka attr="Book">Darkly Dreaming Dexter</aka><aka country="LT">Deksteris</aka><aka country="LV">Deksters</aka><aka country="UA">Декстер</aka><aka country="BG">Декстър</aka><aka country="RU">Правосудие Декстера</aka><aka country="IL">דקסטר</aka></akas>
+</Showinfo>
