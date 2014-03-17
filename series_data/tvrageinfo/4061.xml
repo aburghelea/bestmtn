@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>4061</showid>
+<showname>Joey</showname>
+<showlink>http://tvrage.com/Joey</showlink>
+<seasons>2</seasons>
+<started>2004</started>
+<startdate>Sep/09/2004</startdate>
+<ended>Mar/07/2006</ended>
+<origin_country>US</origin_country>
+<status>Canceled/Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Comedy</genre></genres>
+<runtime>30</runtime>
+<network  country="US">NBC</network>
+<airtime>20:00</airtime>
+<airday>Thursday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka country="LT">Džo</aka><aka country="BR">Vida de Artista</aka></akas>
+</Showinfo>

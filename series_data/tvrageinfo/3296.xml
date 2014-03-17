@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>3296</showid>
+<showname>Detective Conan</showname>
+<showlink>http://tvrage.com/shows/id-3296</showlink>
+<seasons>21</seasons>
+<started>1996</started>
+<startdate>Jan/08/1996</startdate>
+<ended></ended>
+<origin_country>JP</origin_country>
+<status>Returning Series</status>
+<classification>Animation</classification>
+<genres><genre>Anime</genre><genre>Crime</genre><genre>Mystery</genre></genres>
+<runtime>30</runtime>
+<network  country="JP">NTV</network>
+<airtime>19:30</airtime>
+<airday>Monday</airday>
+<timezone>GMT+9 -DST</timezone>
+<akas><aka>Case Closed</aka><aka country="DE">Detektiv Conan</aka><aka country="JP">Meitantei Conan</aka><aka country="DK">Mesterdetektiven Conan</aka></akas>
+</Showinfo>

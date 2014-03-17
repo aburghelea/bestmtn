@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>3506</showid>
+<showname>Family Guy</showname>
+<showlink>http://tvrage.com/Family_Guy</showlink>
+<seasons>12</seasons>
+<started>1999</started>
+<startdate>Jan/31/1999</startdate>
+<ended></ended>
+<origin_country>US</origin_country>
+<status>Returning Series</status>
+<classification>Animation</classification>
+<genres><genre>Adult Cartoons</genre><genre>Comedy</genre></genres>
+<runtime>30</runtime>
+<network  country="US">FOX</network>
+<airtime>21:00</airtime>
+<airday>Sunday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka attr="Abbreviation">FG</aka><aka country="PL">Głowa rodziny</aka><aka country="IT">I Griffin</aka><aka country="LT">Šeimos bičas</aka><aka country="BR">Uma Família Da Pesada</aka><aka country="RU">Гриффины</aka><aka country="IL">איש משפחה</aka></akas>
+</Showinfo>

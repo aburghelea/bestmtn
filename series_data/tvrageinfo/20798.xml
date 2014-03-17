@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>20798</showid>
+<showname>FlashForward</showname>
+<showlink>http://tvrage.com/FlashForward</showlink>
+<seasons>1</seasons>
+<started>2009</started>
+<startdate>Sep/24/2009</startdate>
+<ended>May/27/2010</ended>
+<origin_country>US</origin_country>
+<status>Canceled</status>
+<classification>Scripted</classification>
+<genres><genre>Drama</genre><genre>Sci-Fi</genre></genres>
+<runtime>60</runtime>
+<network  country="US">ABC</network>
+<airtime>20:00</airtime>
+<airday>Thursday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka>Flash Forward</aka><aka country="PL">Flash Forward: Przebłysk Jutra</aka><aka country="HU">FlashForward - A jövő emlékei</aka><aka attr="Working Title" country="RO">FlashForward: Amintiri din Viitor</aka><aka country="RU">Вспомни, что будет</aka><aka country="RU">Мгновения грядущего</aka></akas>
+</Showinfo>

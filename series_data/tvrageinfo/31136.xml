@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>31136</showid>
+<showname>Vikings</showname>
+<showlink>http://tvrage.com/Vikings</showlink>
+<seasons>2</seasons>
+<started>2013</started>
+<startdate>Mar/03/2013</startdate>
+<ended></ended>
+<origin_country>CA</origin_country>
+<status>Returning Series</status>
+<classification>Scripted</classification>
+<genres><genre>Drama</genre><genre>History</genre></genres>
+<runtime>60</runtime>
+<network  country="US">HISTORY</network>
+<airtime>22:00</airtime>
+<airday>Thursday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka country="FI">Viikingit</aka><aka country="RU">Викинги</aka></akas>
+</Showinfo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>8044</showid>
+<showname>The IT Crowd</showname>
+<showlink>http://tvrage.com/The_IT_Crowd</showlink>
+<seasons>4</seasons>
+<started>2006</started>
+<startdate>Feb/03/2006</startdate>
+<ended>Sep/27/2013</ended>
+<origin_country>UK</origin_country>
+<status>Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Comedy</genre></genres>
+<runtime>30</runtime>
+<network  country="UK">Channel 4</network>
+<airtime>22:00</airtime>
+<airday>Friday</airday>
+<timezone>GMT+0 -DST</timezone>
+<akas><aka country="EE">IT-osakond</aka><aka country="HU">Kockafejek</aka><aka country="PL">Technicy-magicy</aka></akas>
+</Showinfo>

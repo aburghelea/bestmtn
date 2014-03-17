@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>3519</showid>
+<showname>Farscape</showname>
+<showlink>http://tvrage.com/Farscape</showlink>
+<seasons>5</seasons>
+<started>1999</started>
+<startdate>Mar/19/1999</startdate>
+<ended>Mar/21/2003</ended>
+<origin_country>US</origin_country>
+<status>Canceled/Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Action</genre><genre>Adventure</genre><genre>Puppets</genre><genre>Sci-Fi</genre></genres>
+<runtime>60</runtime>
+<network  country="US">Syfy</network>
+<airtime>20:00</airtime>
+<airday>Friday</airday>
+<timezone>GMT-5 -DST</timezone>
+</Showinfo>

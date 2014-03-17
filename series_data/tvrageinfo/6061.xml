@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>6061</showid>
+<showname>The Office (US)</showname>
+<showlink>http://tvrage.com/The_Office</showlink>
+<seasons>9</seasons>
+<started>2005</started>
+<startdate>Mar/24/2005</startdate>
+<ended>May/16/2013</ended>
+<origin_country>US</origin_country>
+<status>Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Comedy</genre></genres>
+<runtime>30</runtime>
+<network  country="US">NBC</network>
+<airtime>21:00</airtime>
+<airday>Thursday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka country="LT">Biuras</aka><aka country="PL">Biuro</aka><aka country="DE">Das Büro</aka><aka attr="Original Full Title" country="US">The Office: An American Workplace</aka><aka country="RU">Офис</aka></akas>
+</Showinfo>

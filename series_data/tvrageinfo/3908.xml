@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>3908</showid>
+<showname>House</showname>
+<showlink>http://tvrage.com/House</showlink>
+<seasons>8</seasons>
+<started>2004</started>
+<startdate>Nov/16/2004</startdate>
+<ended>May/21/2012</ended>
+<origin_country>US</origin_country>
+<status>Canceled/Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Drama</genre><genre>Medical</genre><genre>Mystery</genre></genres>
+<runtime>60</runtime>
+<network  country="US">FOX</network>
+<airtime>21:00</airtime>
+<airday>Monday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka country="LT">Daktaras Hausas</aka><aka country="RO">Doctor House</aka><aka country="HU">Doktor House</aka><aka country="PL">Dr House</aka><aka country="BR">Dr. House</aka><aka attr="season 1" country="US">House, M.D.</aka><aka country="BG">Доктор Хаус</aka><aka country="IL">האוס</aka></akas>
+</Showinfo>

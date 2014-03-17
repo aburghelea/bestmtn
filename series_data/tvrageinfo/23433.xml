@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>23433</showid>
+<showname>Sherlock</showname>
+<showlink>http://tvrage.com/Sherlock</showlink>
+<seasons>3</seasons>
+<started>2010</started>
+<startdate>Jul/25/2010</startdate>
+<ended></ended>
+<origin_country>UK</origin_country>
+<status>Returning Series</status>
+<classification>Scripted</classification>
+<genres><genre>Crime</genre><genre>Drama</genre><genre>Mystery</genre></genres>
+<runtime>90</runtime>
+<network  country="UK">BBC one</network>
+<airtime>21:00</airtime>
+<airday>Sunday</airday>
+<timezone>GMT+0 -DST</timezone>
+<akas><aka country="RU">Шерлок</aka></akas>
+</Showinfo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>2680</showid>
+<showname>Avatar: The Last Airbender</showname>
+<showlink>http://tvrage.com/Avatar-The_Last_Airbender</showlink>
+<seasons>3</seasons>
+<started>2005</started>
+<startdate>Feb/21/2005</startdate>
+<ended>Jul/19/2008</ended>
+<origin_country>US</origin_country>
+<status>Ended</status>
+<classification>Animation</classification>
+<genres><genre>Anime</genre><genre>Action</genre><genre>Adventure</genre><genre>Children</genre></genres>
+<runtime>30</runtime>
+<network  country="US">nickelodeon</network>
+<airtime>20:30</airtime>
+<airday>Friday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka attr="abbreviation">ATLA</aka><aka>Avatar</aka><aka country="DE">Avatar - Der Herr der Elemente</aka><aka>The Last Airbender</aka><aka>The Legend of Aang</aka><aka country="RU">Аватар: Легенда об Аанге</aka></akas>
+</Showinfo>
