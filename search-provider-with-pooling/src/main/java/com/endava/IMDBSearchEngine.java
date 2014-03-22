@@ -24,8 +24,8 @@ public class IMDBSearchEngine extends Application<IMDBSearchEngineConfig> {
     @Override
     public void initialize(final Bootstrap<IMDBSearchEngineConfig> bootstrap) {
         bootstrap.addBundle(new SpringBundle<>(applicationContext(), true, true, true));
-        bootstrap.addBundle(new CrossOriginBundle());
         bootstrap.addBundle(new SwaggerBundle());
+        bootstrap.addBundle(new CrossOriginBundle());
     }
 
     @Override

@@ -1,41 +1,65 @@
 package com.endava.service;
 
 import com.endava.domain.IMDBEntry;
-import com.endava.repository.IMDBDatabase;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Ionuț Păduraru
  */
-@Service
 public class IMDBService {
 
-    @Autowired
-    private IMDBDatabase database;
+    private List<IMDBEntry> data;
+    private List<Set<String>> index;
 
-    public List<IMDBEntry> find(String query) {
-        List<IMDBEntry> result = new ArrayList<>();
-        if (!StringUtils.hasText(query)) {
+    public IMDBService(List<IMDBEntry> data) {
+        this.data = data;
+        buildIndex();
+    }
+
+    private void buildIndex() {
+        index = new ArrayList<>(data.size());
+        for (IMDBEntry imdbEntry : data) {
+            Set<String> words = new HashSet<>();
+            words.addAll(split(imdbEntry.getTitle()));
+            words.addAll(split(imdbEntry.getActors()));
+            words.addAll(split(imdbEntry.getDirector()));
+            words.addAll(split(imdbEntry.getGenre()));
+            words.addAll(split(imdbEntry.getPlot()));
+            index.add(words);
+        }
+    }
+
+    private Set<String> split (String s) {
+        Set<String> result = new HashSet<>();
+        if (s == null) {
             return result;
         }
-        for (IMDBEntry imdbEntry : database.getData()) {
-            if (match(imdbEntry, query)) {
-                result.add(imdbEntry);
+        StringTokenizer tokenizer = new StringTokenizer(s, " ,.;'\"\\/?!:"); // note: not splitting on "-"
+        while(tokenizer.hasMoreTokens()) {
+            String word = tokenizer.nextToken();
+            if (StringUtils.hasText(word) && word.length() > 2){
+                result.add(word.toLowerCase());
             }
         }
         return result;
     }
 
-    private boolean match(IMDBEntry imdbEntry, String query) {
-        if (imdbEntry.getTitle().toLowerCase().contains(query.toLowerCase())) {
-            return true;
+    public List<IMDBEntry> getData() {
+        return data;
+    }
+
+    public List<IMDBEntry> find(String query) {
+        List<IMDBEntry> result = new ArrayList<>();
+        for (String queryItem : split(query)) {
+            for(int i = 0; i < index.size(); i++) {
+                if (index.get(i).contains(queryItem)) {
+                    result.add(data.get(i));
+                }
+            }
         }
-        return false;
+        return result;
     }
 
 }

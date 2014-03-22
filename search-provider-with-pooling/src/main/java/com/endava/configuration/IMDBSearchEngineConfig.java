@@ -28,6 +28,14 @@ public class IMDBSearchEngineConfig extends Configuration {
     @NotNull
     @JsonProperty
     private int failureSeed;
+    @Valid
+    @NotNull
+    @JsonProperty
+    private int responseTTLMin;
+    @Valid
+    @NotNull
+    @JsonProperty
+    private int responsesMaxCnt;
 
     public String getNodeName() {
         return nodeName;
@@ -60,4 +68,21 @@ public class IMDBSearchEngineConfig extends Configuration {
     public void setFailureSeed(int failureSeed) {
         this.failureSeed = failureSeed;
     }
+
+    public int getResponseTTLMin() {
+        return responseTTLMin;
+    }
+
+    public void setResponseTTLMin(int responseTTLMin) {
+        this.responseTTLMin = responseTTLMin;
+    }
+
+    public int getResponsesMaxCnt() {
+        return responsesMaxCnt;
+    }
+
+    public void setResponsesMaxCnt(int responsesMaxCnt) {
+        this.responsesMaxCnt = responsesMaxCnt;
+    }
+
 }

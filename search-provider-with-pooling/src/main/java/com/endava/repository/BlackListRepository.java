@@ -3,25 +3,29 @@ package com.endava.repository;
 import org.springframework.stereotype.Component;
 
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 public class BlackListRepository {
 
-    private Set<String> entries = Collections.synchronizedSet(new HashSet<String>());
+    private Map<String, String> entries = Collections.synchronizedMap(new HashMap<String, String>());
 
-
-    public Set<String> getEntries() {
-        return entries;
-    }
 
     public void add(String key, String reason) {
-        // TODO
+        entries.put(key, reason);
     }
+
+    public boolean contains(String key) {
+        return entries.containsKey(key);
+    }
+
     public void purge() {
         System.out.println("Purge blacklist request received");
         entries.clear();
     }
 
+    public int size() {
+        return entries.size();
+    }
 }

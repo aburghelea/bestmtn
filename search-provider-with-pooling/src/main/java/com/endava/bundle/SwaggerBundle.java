@@ -24,13 +24,13 @@ public class SwaggerBundle implements Bundle {
 
     @Override
     public void run(Environment environment) {
-        environment.jersey().register(new ApiListingResourceJSON());
-        environment.jersey().register(new ApiDeclarationProvider());
-        environment.jersey().register(new ResourceListingProvider());
         ScannerFactory.setScanner(new DefaultJaxrsScanner());
         ClassReaders.setReader(new DefaultJaxrsApiReader());
         SwaggerConfig config = ConfigFactory.config();
         config.setApiVersion("1.0");
+        environment.jersey().register(new ApiListingResourceJSON());
+        environment.jersey().register(new ApiDeclarationProvider());
+        environment.jersey().register(new ResourceListingProvider());
     }
 
     @Override

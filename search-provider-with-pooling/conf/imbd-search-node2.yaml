@@ -1,5 +1,11 @@
 nodeName: IMDB2
 
+minDelayMs: 10
+maxDelayMs: 3000
+failureSeed: 300
+responseTTLMin: 5
+responsesMaxCnt: 200000
+
 logging:
   level: INFO
 

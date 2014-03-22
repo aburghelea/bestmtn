@@ -1,8 +1,10 @@
 nodeName: IMDB1
 
-minDelayMs: 2000
-maxDelayMs: 20000
-failureSeed: 20
+minDelayMs: 10
+maxDelayMs: 3000
+failureSeed: 300
+responseTTLMin: 5
+responsesMaxCnt: 200000
 
 logging:
   level: INFO
@@ -17,3 +19,5 @@ server:
   adminConnectors:
     - type: http
       port: 8081
+#  requestLog:
+#    appenders: []

@@ -3,6 +3,9 @@ nodeName: IMDB_TEST_NODE
 minDelayMs: 20
 maxDelayMs: 22
 failureSeed: 200000000
+responseTTLMin: 5
+responsesMaxCnt: 200000
+
 
 server:
   applicationConnectors:

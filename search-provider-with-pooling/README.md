@@ -3,6 +3,8 @@
 Search engine
 
 ### Building
+* clone & install dropwizard: https://github.com/dropwizard/dropwizard (necessary because 0.7.0 is not yet released)
+* package the search engine
 ```
 mvn verify
 ```
@@ -14,9 +16,10 @@ mvn verify
 
 ### Using
 ```
-> curl -XGET http://localhost:8080/movies/time
-> curl -XGET http://localhost:8090/results/<reference>
+> curl -XGET http://localhost:8080/movies/<query>
+> curl -XGET http://localhost:8090/movies/results/<reference>
 ```
+The <reference> is obtained from the "Location" response header of the initial query (assuming an 303 status code).
 
 ### Monitoring
 ```
@@ -50,5 +53,6 @@ mvn verify
 > curl -XGET http://localhost:8081/metrics
 ```
 
+### REST API
 To see the REST API you can use Swagger at [swagger.wordnik.com](http://swagger.wordnik.com/) using ```http://localhost:8080/api-docs```.
 

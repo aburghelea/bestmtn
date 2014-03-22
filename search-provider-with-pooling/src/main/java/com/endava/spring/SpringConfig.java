@@ -2,7 +2,7 @@ package com.endava.spring;
 
 import com.endava.configuration.IMDBSearchEngineConfig;
 import com.endava.domain.IMDBEntry;
-import com.endava.repository.IMDBDatabase;
+import com.endava.service.IMDBService;
 import com.endava.service.TimeService;
 import com.endava.service.TimeServiceImpl;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -28,7 +28,7 @@ public class SpringConfig {
     private Environment environment;
 
     @Bean
-    public IMDBDatabase imdbDatabase() throws Exception {
+    public IMDBService imdbDatabase() throws Exception {
         List<IMDBEntry> data = new ArrayList<>();
         ObjectMapper objectMapper = new ObjectMapper();
         InputStream jsonStream = getClass().getResourceAsStream("/imdb.json");
@@ -39,7 +39,7 @@ public class SpringConfig {
                 jsonStream.close();
             }
         }
-        return new IMDBDatabase(data);
+        return new IMDBService(data);
     }
     @Bean
     public TimeService getTimeService() throws Exception {

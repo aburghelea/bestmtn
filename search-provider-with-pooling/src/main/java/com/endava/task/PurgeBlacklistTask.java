@@ -21,7 +21,7 @@ public class PurgeBlacklistTask extends Task {
     @Override
     public void execute(ImmutableMultimap<String, String> parameters, PrintWriter output) throws Exception {
 
-        String message = String.format("Removed %d entries from blacklist.\n", blackList.getEntries().size());
+        String message = String.format("Removed %d entries from blacklist.\n", blackList.size());
 
         blackList.purge();
 

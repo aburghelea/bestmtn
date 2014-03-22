@@ -35,12 +35,15 @@ public class SpamService {
         requestCache10S = CacheBuilder.newBuilder().maximumSize(2000).expireAfterWrite(10, TimeUnit.SECONDS).build();
         requestCache60S = CacheBuilder.newBuilder().maximumSize(2000).expireAfterWrite(60, TimeUnit.SECONDS).build();
         thresholds = new ArrayList<>();
-        thresholds.add(new SpamThreshold(requestCache60S, 500, "Oh dear, we have a senior spamer :(   %d request per %d seconds is really bad..."));
+        thresholds.add(new SpamThreshold(requestCache60S, 500, "Oh dear, we have a senior spamer :(   %d request per %d seconds is really bad...", true));
         thresholds.add(new SpamThreshold(requestCache10S, 50, "Oh dear, we have a spamer :(   %d request per %d seconds is bad..."));
         thresholds.add(new SpamThreshold(requestCache1S, 5, "Oh dear, we have a junior spamer :(   %d request per %d second is not good..."));
     }
 
     public void checkSpam(String remoteHost) throws IllegalStateException {
+        if (blackList.contains(remoteHost)) {
+            throw new IllegalStateException("You again?");
+        }
         if (!active) {
             return;
         }
@@ -63,11 +66,16 @@ public class SpamService {
         Cache<String, String> cache;
         int size;
         String msgTemplate;
+        boolean blacklist = false;
 
         SpamThreshold(Cache<String, String> cache, int size, String msgTemplate) {
+            this(cache, size, msgTemplate, false);
+        }
+        SpamThreshold(Cache<String, String> cache, int size, String msgTemplate, boolean blacklist) {
             this.cache = cache;
             this.size = size;
             this.msgTemplate = msgTemplate;
+            this.blacklist = blacklist;
         }
     }
 

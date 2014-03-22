@@ -5,17 +5,17 @@ package com.endava.domain;
  */
 public class IMDBSearchRef {
 
-    private String path;
+    private String reference;
 
-    public IMDBSearchRef(String path) {
-        this.path = path;
+    public IMDBSearchRef(String reference) {
+        this.reference = reference;
     }
 
-    public String getPath() {
-        return path;
+    public String getReference() {
+        return reference;
     }
 
-    public void setPath(String path) {
-        this.path = path;
+    public void setReference(String reference) {
+        this.reference = reference;
     }
 }

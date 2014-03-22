@@ -11,6 +11,7 @@ import com.sun.jersey.api.client.GenericType;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.client.impl.ClientRequestImpl;
 import io.dropwizard.testing.junit.DropwizardAppRule;
+import org.apache.commons.io.IOUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.ClassRule;
@@ -20,10 +21,13 @@ import org.mockito.Mockito;
 import javax.servlet.ServletException;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.StringWriter;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.when;
 
@@ -72,7 +76,7 @@ public class IMDBSearchEngineTest {
         ClientResponse response = resource.getHeadHandler().handle(get);
         assertEquals(303, response.getStatus());
         String location = response.getLocation().toString();
-        Assert.assertTrue(location, location.startsWith("http://localhost:" + RULE.getLocalPort() + "/results/"));
+        Assert.assertTrue(location, location.startsWith("http://localhost:" + RULE.getLocalPort() + "/movies/results/"));
     }
 
     // ensure the results are not available immediately
@@ -86,7 +90,7 @@ public class IMDBSearchEngineTest {
         ClientResponse response = resource.getHeadHandler().handle(get);
         assertEquals(303, response.getStatus());
         String location = response.getLocation().toString();
-        Assert.assertTrue(location, location.startsWith("http://localhost:" + RULE.getLocalPort() + "/results/"));
+        Assert.assertTrue(location, location.startsWith("http://localhost:" + RULE.getLocalPort() + "/movies/results/"));
 
         resource = client.resource(location);
         get = new ClientRequestImpl(resource.getURI(), "GET");
@@ -105,7 +109,7 @@ public class IMDBSearchEngineTest {
         ClientResponse response = resource.getHeadHandler().handle(get);
         assertEquals(303, response.getStatus());
         String location = response.getLocation().toString();
-        Assert.assertTrue(location, location.startsWith("http://localhost:" + RULE.getLocalPort() + "/results/"));
+        Assert.assertTrue(location, location.startsWith("http://localhost:" + RULE.getLocalPort() + "/movies/results/"));
 
         reset(timeService);
         when(timeService.currentTimeMillis()).thenReturn(1000L);
@@ -115,10 +119,10 @@ public class IMDBSearchEngineTest {
         assertEquals(200, response.getStatus());
 
         List<IMDBEntry> results = response.getEntity(new GenericType<List<IMDBEntry>>() {});
-        assertEquals("number of results", 3, results.size());
-        assertEquals("Love Hina", results.get(0).getTitle());
-        assertEquals("Love Bites", results.get(1).getTitle());
-        assertEquals("Mad Love", results.get(2).getTitle());
+        assertEquals("number of results", 9, results.size());
+        assertEquals("Coupling", results.get(0).getTitle());
+        assertEquals("Love Hina", results.get(1).getTitle());
+        assertEquals("Beck: Mongolian Chop Squad", results.get(2).getTitle());
     }
 
     // ensure the result are not available forever
@@ -132,7 +136,7 @@ public class IMDBSearchEngineTest {
         ClientResponse response = resource.getHeadHandler().handle(get);
         assertEquals(303, response.getStatus());
         String location = response.getLocation().toString();
-        Assert.assertTrue(location, location.startsWith("http://localhost:" + RULE.getLocalPort() + "/results/"));
+        Assert.assertTrue(location, location.startsWith("http://localhost:" + RULE.getLocalPort() + "/movies/results/"));
 
         reset(timeService);
         when(timeService.currentTimeMillis()).thenReturn(TimeUnit.MINUTES.toMillis(30)); // 30 minutes
@@ -142,4 +146,32 @@ public class IMDBSearchEngineTest {
         assertEquals(410, response.getStatus());
     }
 
+    @Test
+    public void apiDocs() throws IOException, ServletException {
+        WebResource resource = new Client().resource("http://localhost:" + RULE.getLocalPort() + "/api-docs");
+        ClientRequestImpl get = new ClientRequestImpl(resource.getURI(), "GET");
+        ClientResponse response = resource.getHeadHandler().handle(get);
+        assertEquals(200, response.getStatus());
+        InputStream inputStream = response.getEntityInputStream();
+        StringWriter writer = new StringWriter();
+        IOUtils.copy(inputStream, writer, "UTF-8");
+        String api = writer.toString();
+        assertTrue(api, api.contains("/movies"));
+
+        resource = new Client().resource("http://localhost:" + RULE.getLocalPort() + "/api-docs/movies");
+        get = new ClientRequestImpl(resource.getURI(), "GET");
+        response = resource.getHeadHandler().handle(get);
+        assertEquals(200, response.getStatus());
+        inputStream = response.getEntityInputStream();
+        writer = new StringWriter();
+        IOUtils.copy(inputStream, writer, "UTF-8");
+        api = writer.toString();
+        System.out.println(api);
+        assertTrue(api.contains("/movies/{query}"));
+        assertTrue(api.contains("/movies/results/{searchReference}"));
+        assertTrue(api.contains("IMDBSearchRef"));
+        assertTrue(api.contains("IMDBEntry"));
+
+
+    }
 }
