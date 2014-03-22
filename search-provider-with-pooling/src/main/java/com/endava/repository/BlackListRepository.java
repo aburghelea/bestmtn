@@ -16,8 +16,12 @@ public class BlackListRepository {
         return entries;
     }
 
+    public void add(String key, String reason) {
+        // TODO
+    }
     public void purge() {
         System.out.println("Purge blacklist request received");
         entries.clear();
     }
+
 }

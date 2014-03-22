@@ -1,4 +1,9 @@
 nodeName: IMDB_TEST_NODE
+
+minDelayMs: 20
+maxDelayMs: 22
+failureSeed: 200000000
+
 server:
   applicationConnectors:
     - type: http
@@ -6,7 +11,9 @@ server:
   adminConnectors:
     - type: http
       port: 0
-  requestLog:
-    appenders: []
+#  requestLog:
+#    appenders: []
+
 logging:
-  appenders: []
+  level: INFO
+#  appenders: []

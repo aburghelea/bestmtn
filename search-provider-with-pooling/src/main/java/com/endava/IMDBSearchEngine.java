@@ -3,6 +3,7 @@ package com.endava;
 import com.endava.bundle.CrossOriginBundle;
 import com.endava.bundle.SwaggerBundle;
 import com.endava.configuration.IMDBSearchEngineConfig;
+import com.endava.service.TimeServiceImpl;
 import com.github.nhuray.dropwizard.spring.SpringBundle;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -31,9 +32,14 @@ public class IMDBSearchEngine extends Application<IMDBSearchEngineConfig> {
     public void run(IMDBSearchEngineConfig configuration, Environment environment) throws Exception {
     }
 
-    private ConfigurableApplicationContext applicationContext() throws BeansException {
+    protected ConfigurableApplicationContext applicationContext() throws BeansException {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-        context.scan("com.endava");
+        context.scan("com.endava.health");
+        context.scan("com.endava.repository");
+        context.scan("com.endava.service");
+        context.scan("com.endava.task");
+        context.scan("com.endava.spring");
+        context.scan("com.endava.resource");
         return context;
     }
 

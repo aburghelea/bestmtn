@@ -3,6 +3,8 @@ package com.endava.spring;
 import com.endava.configuration.IMDBSearchEngineConfig;
 import com.endava.domain.IMDBEntry;
 import com.endava.repository.IMDBDatabase;
+import com.endava.service.TimeService;
+import com.endava.service.TimeServiceImpl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.dropwizard.setup.Environment;
@@ -17,7 +19,7 @@ import java.util.List;
 /**
  * Ionuț Păduraru
  */
-@Configuration
+@Configuration("springConfig")
 public class SpringConfig {
 
     @Autowired
@@ -38,6 +40,10 @@ public class SpringConfig {
             }
         }
         return new IMDBDatabase(data);
+    }
+    @Bean
+    public TimeService getTimeService() throws Exception {
+        return new TimeServiceImpl();
     }
 
 }
