@@ -1,0 +1,15 @@
+nodeName: IMDB1
+
+logging:
+  level: INFO
+
+  loggers:
+    "io.dropwizard.setup.AdminEnvironment": WARN
+
+server:
+  applicationConnectors:
+      - type: http
+        port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
