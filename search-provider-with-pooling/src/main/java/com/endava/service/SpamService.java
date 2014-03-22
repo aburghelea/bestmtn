@@ -41,7 +41,7 @@ public class SpamService {
     }
 
     public void checkSpam(String remoteHost) throws IllegalStateException {
-        if (active) {
+        if (!active) {
             return;
         }
         String key = "" + System.currentTimeMillis();
