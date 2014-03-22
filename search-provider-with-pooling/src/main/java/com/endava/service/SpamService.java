@@ -13,12 +13,22 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class SpamService {
 
+    private boolean active = true;
+
     @Autowired
     private BlackListRepository blackList;
     private Cache<String, String> requestCache1S;
     private Cache<String, String> requestCache10S;
     private Cache<String, String> requestCache60S;
     private List<SpamThreshold> thresholds;
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 
     public SpamService() {
         requestCache1S = CacheBuilder.newBuilder().maximumSize(2000).expireAfterWrite(1, TimeUnit.SECONDS).build();
@@ -31,6 +41,9 @@ public class SpamService {
     }
 
     public void checkSpam(String remoteHost) throws IllegalStateException {
+        if (active) {
+            return;
+        }
         String key = "" + System.currentTimeMillis();
         requestCache1S.put(key, remoteHost);
         requestCache10S.put(key, remoteHost);

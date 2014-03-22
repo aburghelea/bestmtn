@@ -28,6 +28,23 @@ mvn verify
 > curl -XPOST http://localhost:8081/tasks/purge-black-list
 ```
 
+### Spam filter management (active by default)
+#### status
+```
+> curl -XPOST http://localhost:8081/tasks/spam-service-management
+```
+#### Activation
+```
+> curl -XPOST http://localhost:8081/tasks/spam-service-management?activate=true
+
+```
+#### Deactivation
+```
+> curl -XPOST http://localhost:8081/tasks/spam-service-management?deactivate=true
+```
+
+
+
 ### Status
 ```
 > curl -XGET http://localhost:8081/metrics
