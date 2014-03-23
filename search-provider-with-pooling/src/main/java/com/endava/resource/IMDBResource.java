@@ -102,7 +102,7 @@ public class IMDBResource implements InitializingBean {
         requestMap.put(ref, new QueryInfo(query, timeService.currentTimeMillis() + delay()));
         Response response = Response.
                 status(Response.Status.SEE_OTHER).
-                header("Location", "http://localhost:" + request.getLocalPort() + "/movies/results/" + ref).
+                header("Location", "http://" + request.getServerName() + ":" + request.getServerPort() + "/movies/results/" + ref).
                 entity(new IMDBSearchRef(ref)).
                 type(MediaType.APPLICATION_JSON).
                 build();
