@@ -4,7 +4,9 @@ Search engine simulator.
 
 Asynchronous REST service using pooling:
 * a search request will return a "search reference"
+![step 1](https://github.com/icemanftg/bestmtn/blob/master/search-provider-with-pooling/src/main/resources/diagrams/step1-%20initial%20query.png?raw=true)
 * the "search reference" can be used to obtain the actual search results. It's possible to take up to a few seconds until the results are available.
+![step 2](https://github.com/icemanftg/bestmtn/blob/master/search-provider-with-pooling/src/main/resources/diagrams/step%202%20-%20get%20the%20results.png?raw=true)
 
 ## If you're lazy
  If you're in a rush, you can use the deployment at [imdb.archeus.ro](http://imdb.archeus.ro:8080/docs/index.html) to play around with it.
