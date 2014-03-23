@@ -6,6 +6,8 @@ failureSeed: 200000000
 responseTTLMin: 5
 responsesMaxCnt: 200000
 
+basePath: http://localhost:8080
+
 
 server:
   applicationConnectors:
