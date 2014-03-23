@@ -4,6 +4,15 @@ Search engine
 
 ### Building
 * clone & install dropwizard: https://github.com/dropwizard/dropwizard (necessary because 0.7.0 is not yet released)
+```
+mvn clean install
+```
+* clone dropwizard-spring: https://github.com/gid79/dropwizard-spring dropwizard (necessary because 0.3.1 is not yet released)
+* checkout & install sha 71e97fe44 of dropwizard-spring
+```
+git checkout 71e97fe44ccca1721d2c7df6f0d715fed19bf06c
+mvn clean install
+```
 * package the search engine
 ```
 mvn verify
