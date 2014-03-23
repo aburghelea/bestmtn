@@ -36,6 +36,10 @@ public class IMDBSearchEngineConfig extends Configuration {
     @NotNull
     @JsonProperty
     private int responsesMaxCnt;
+    @Valid
+    @NotNull
+    @JsonProperty
+    private String basePath;
 
     public String getNodeName() {
         return nodeName;
@@ -85,4 +89,11 @@ public class IMDBSearchEngineConfig extends Configuration {
         this.responsesMaxCnt = responsesMaxCnt;
     }
 
+    public String getBasePath() {
+        return basePath;
+    }
+
+    public void setBasePath(String basePath) {
+        this.basePath = basePath;
+    }
 }

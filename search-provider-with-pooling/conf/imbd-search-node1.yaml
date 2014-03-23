@@ -6,6 +6,8 @@ failureSeed: 300
 responseTTLMin: 5
 responsesMaxCnt: 200000
 
+basePath: http://imdb2.archeus.ro:8080
+
 logging:
   level: INFO
 
