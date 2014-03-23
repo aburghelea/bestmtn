@@ -1,15 +1,27 @@
 # IMDB search engine
 
-Search engine
+Search engine simulator.
+
+Asynchronous REST service using pooling:
+* a search request will return a "search reference"
+* the "search reference" can be used to obtain the actual search results. It's possible to take up to a few seconds until the results are available.
+
+## If you're lazy
+ If you're in a rush, you can use the deployment at [imdb.archeus.ro](http://imdb.archeus.ro:8080/docs/index.html) to play around with it.
+ The below links are assuming local deployment, replace ```localhost``` with ```imdb.archeus.ro``` if you're using the web deployment.
 
 ### Building
 * clone & install dropwizard: https://github.com/dropwizard/dropwizard (necessary because 0.7.0 is not yet released)
 ```
+git clone https://github.com/dropwizard/dropwizard.git
+cd dropwizard
 mvn clean install
 ```
-* clone dropwizard-spring: https://github.com/gid79/dropwizard-spring dropwizard (necessary because 0.3.1 is not yet released)
+* clone dropwizard-spring: https://github.com/gid79/dropwizard-spring (necessary because 0.3.1 is not yet released)
 * checkout & install sha 71e97fe44 of dropwizard-spring
 ```
+git clone https://github.com/gid79/dropwizard-spring.git
+cd dropwizard-spring
 git checkout 71e97fe44ccca1721d2c7df6f0d715fed19bf06c
 mvn clean install
 ```
