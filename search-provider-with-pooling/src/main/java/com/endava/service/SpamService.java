@@ -56,7 +56,9 @@ public class SpamService {
             threshold.cache.cleanUp();
             long crtSize = threshold.cache.size();
             if (crtSize > threshold.size) {
-                blackList.add(remoteHost, "size_" + threshold.size);
+                if (threshold.blacklist) {
+                    blackList.add(remoteHost, "size_" + threshold.size);
+                }
                 throw new IllegalStateException(String.format(threshold.msgTemplate, crtSize, threshold.size));
             }
         }
