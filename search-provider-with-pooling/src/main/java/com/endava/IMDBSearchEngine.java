@@ -6,6 +6,7 @@ import com.endava.configuration.IMDBSearchEngineConfig;
 import com.endava.service.TimeServiceImpl;
 import com.github.nhuray.dropwizard.spring.SpringBundle;
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.springframework.beans.BeansException;
@@ -26,6 +27,7 @@ public class IMDBSearchEngine extends Application<IMDBSearchEngineConfig> {
         bootstrap.addBundle(new SpringBundle<>(applicationContext(), true, true, true));
         bootstrap.addBundle(new SwaggerBundle());
         bootstrap.addBundle(new CrossOriginBundle());
+        bootstrap.addBundle(new AssetsBundle("/assets/", "/docs", "index.html"));
     }
 
     @Override

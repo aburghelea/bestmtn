@@ -16,6 +16,8 @@ server:
   applicationConnectors:
       - type: http
         port: 8080
+#        urlPattern: /service/*  # Default is /*
+
   adminConnectors:
     - type: http
       port: 8081

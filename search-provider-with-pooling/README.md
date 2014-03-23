@@ -54,5 +54,6 @@ The <reference> is obtained from the "Location" response header of the initial q
 ```
 
 ### REST API
-To see the REST API you can use Swagger at [swagger.wordnik.com](http://swagger.wordnik.com/) using ```http://localhost:8080/api-docs```.
+The REST API documentation is available at ```http://localhost:8080/docs/```
+You can also use Swagger at [swagger.wordnik.com](http://swagger.wordnik.com/) using ```http://localhost:8080/api-docs```.
 
