@@ -11,6 +11,7 @@ import java.net.Socket;
 
 /**
  * Created by cosmin on 3/16/14.
+ * Worker that will handle an incoming request
  */
 public class RequestHandlerWorker implements Runnable {
 
@@ -24,13 +25,16 @@ public class RequestHandlerWorker implements Runnable {
 
     public void run() {
         try {
-            LOGGER.info("Received request");
             Thread.sleep(5000);
             HttpRequest httpRequest = HttpRequestBuilder.buildHttpRequest(socket.getInputStream());
             HttpResponse httpResponse = HttpResponseBuilder.buildHttpResponse(httpRequest);
-            HttpResponseWriter.write(socket.getOutputStream(), httpResponse);
-            socket.close();
+            HttpResponseWriter.writeOnSocketAndClose(socket, httpResponse);
         } catch (Exception e) {
+            try {
+                HttpResponseWriter.writeOnSocketAndClose(socket, HttpResponseBuilder.buildInternalServerError());
+            } catch (IOException e1) {
+                //
+            }
             LOGGER.info("Runtime error. Cause: " + e.getMessage());
         }
     }

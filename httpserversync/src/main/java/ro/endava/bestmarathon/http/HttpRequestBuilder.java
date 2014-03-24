@@ -12,6 +12,13 @@ import java.util.List;
  */
 public class HttpRequestBuilder {
 
+    /**
+     * Build an @see HttpRequest from an InputStream(received via socket channels)
+     *
+     * @param is
+     * @return
+     * @throws IOException
+     */
     public static HttpRequest buildHttpRequest(InputStream is) throws IOException {
         HttpMethod httpMethod;
         List<String> headers = new ArrayList<String>();

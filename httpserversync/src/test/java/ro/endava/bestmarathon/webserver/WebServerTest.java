@@ -18,7 +18,7 @@ public class WebServerTest {
         ExecutorService executor = new ThreadPoolExecutor(10, 10,
                 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>());
         for (int i = 0; i < 5; i++){
-            executor.submit(new TestThread());
+            //executor.submit(new TestThread());
         }
 
         Thread.sleep(100000);
