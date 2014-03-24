@@ -14,7 +14,7 @@ public class Application {
     public static void main(String args[]) {
         try {
             WebServer webServer = new WebServer();
-            webServer.start(8080, 1, 1);
+            webServer.start(8000, 2, 1);
         } catch (Exception e) {
             LOGGER.info("Error starting synchronous web server. Cause: " + e.getMessage());
         }

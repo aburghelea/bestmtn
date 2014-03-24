@@ -24,6 +24,7 @@ public class RequestHandlerWorker implements Runnable {
 
     public void run() {
         try {
+            LOGGER.info("Received request");
             Thread.sleep(5000);
             HttpRequest httpRequest = HttpRequestBuilder.buildHttpRequest(socket.getInputStream());
             HttpResponse httpResponse = HttpResponseBuilder.buildHttpResponse(httpRequest);

@@ -48,9 +48,9 @@ public class HttpResponseBuilder {
     private static List<String> buildHeaders(String version, HttpStatus httpStatus){
         List<String> headers = new ArrayList<String>();
         headers.add(version + " " + httpStatus.toString());
-        headers.add("Connection: close");
+        headers.add("Connection: keep-alive");
         headers.add("Server: SynchronousWebServer");
-        headers.add("Content-Type: application/json");
+        headers.add("Content-Type: application/json; charset=utf-8");
         return headers;
     }
 

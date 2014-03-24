@@ -18,27 +18,36 @@ public class WebServer extends Thread {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(WebServer.class);
 
+    private ExecutorService executor;
+
     public void start(int port, int noThreads, int queueCapacity) throws IOException {
+        initializeExecutor(noThreads, queueCapacity);
         ServerSocket s = new ServerSocket(port);
         LOGGER.info("Synchronous Web Server listening on port " + port + " (press CTRL-C to quit)");
-        ExecutorService executor = new ThreadPoolExecutor(noThreads, noThreads,
-                0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(queueCapacity));
 
         while (true) {
-            Socket accept = s.accept();
-            try {
-                executor.submit(new RequestHandlerWorker(accept));
-            } catch (RejectedExecutionException e) {
-                //Should return 503 RESOURCE NOT AVAILABLE
-                HttpResponse httpResponse = HttpResponseBuilder.buildServiceUnavailable();
-                HttpResponseWriter.write(accept.getOutputStream(), httpResponse);
-                LOGGER.info("We can't support so many connections. Cause: " + e.getMessage());
-            } catch (Exception e) {
-                //Should return 500 INTERNAL SERVER ERROR
-                HttpResponse httpResponse = HttpResponseBuilder.buildInternalServerError();
-                HttpResponseWriter.write(accept.getOutputStream(), httpResponse);
-                LOGGER.info("Runtime error. Cause: " + e.getMessage());
-            }
+                submit(s.accept());
+        }
+    }
+
+    private void initializeExecutor(int noThreads, int queueCapacity) {
+        this.executor = new ThreadPoolExecutor(noThreads, noThreads,
+                0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(queueCapacity));
+    }
+
+    private void submit(Socket s) throws IOException {
+        try {
+            executor.submit(new RequestHandlerWorker(s));
+        } catch (RejectedExecutionException e) {
+            //Should return 503 RESOURCE NOT AVAILABLE
+            HttpResponse httpResponse = HttpResponseBuilder.buildServiceUnavailable();
+            HttpResponseWriter.write(s.getOutputStream(), httpResponse);
+            LOGGER.info("We can't support so many connections. Cause: " + e.getMessage());
+        } catch (Exception e) {
+            //Should return 500 INTERNAL SERVER ERROR
+            HttpResponse httpResponse = HttpResponseBuilder.buildInternalServerError();
+            HttpResponseWriter.write(s.getOutputStream(), httpResponse);
+            LOGGER.info("Runtime error. Cause: " + e.getMessage());
         }
     }
 }
