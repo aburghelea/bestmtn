@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
+import ro.endava.bestm.datacontainer.DataContainer;
+import ro.endava.bestm.datacontainer.TvRageInfoContainerImpl;
 
 /**
  * BEST Engineering Marathon 2014
@@ -21,12 +23,11 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 public class SpringConfiguration {
 
     @Value("${taskexecutor.corepoolsize}")
-    private final int corePoolSize = 5;
+    private int corePoolSize;
     @Value("${taskexecutor.maxpoolsize}")
-    private final int maxPoolSize = 10;
+    private int maxPoolSize ;
     @Value("${taskexecutor.shutdownwait}")
-    private final boolean waitForJobsToCompleteOnShutdown = true;
-
+    private boolean waitForJobsToCompleteOnShutdown;
 
     Logger logger = LoggerFactory.getLogger(SpringConfiguration.class);
 
@@ -40,4 +41,11 @@ public class SpringConfiguration {
 
         return taskExecutor;
     }
+
+    @Bean
+    public DataContainer dataContainer() {
+        return new TvRageInfoContainerImpl("tvrage.json");
+    }
+
+
 }

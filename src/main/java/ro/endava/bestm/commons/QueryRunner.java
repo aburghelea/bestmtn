@@ -2,7 +2,11 @@ package ro.endava.bestm.commons;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import ro.endava.bestm.datacontainer.DataContainer;
 import ro.endava.bestm.dto.SimpleResponse;
 
 import java.util.HashMap;
@@ -15,15 +19,18 @@ import java.util.Map;
  * @author <a href="mailto:alexandru.burghelea@endava.com">Alexandru BURGHELEA</a>
  * @since 3/13/14
  */
+
 public class QueryRunner implements Runnable {
 
     private Logger logger = LoggerFactory.getLogger(QueryRunner.class);
     private String query;
     private String callback;
+    private DataContainer dataContainer;
 
-    public QueryRunner(String query, String callback) {
+    public QueryRunner(String query, String callback, DataContainer dataContainer) {
         this.query = query;
         this.callback = callback;
+        this.dataContainer = dataContainer;
     }
 
     @Override
@@ -31,9 +38,8 @@ public class QueryRunner implements Runnable {
         logger.info("Running task " + query + " " + callback);
 
         RestTemplate restTemplate = new RestTemplate();
-        SimpleResponse sr = restTemplate.getForObject("http://localhost:8080/callback?query=123", SimpleResponse.class);
 
-        logger.info("Received " + sr);
-        logger.info("finished");
+        String response = restTemplate.postForObject(callback, dataContainer.get(query),String.class);
+        logger.info(response);
     }
 }

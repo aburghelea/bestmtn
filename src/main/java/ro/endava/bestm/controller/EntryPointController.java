@@ -7,11 +7,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import ro.endava.bestm.dto.SimpleResponse;
+import ro.endava.bestm.entity.ShowInfo;
+import ro.endava.bestm.exception.InvaliCallBackException;
+import ro.endava.bestm.exception.RandomServerException;
 import ro.endava.bestm.service.ReturningService;
+
+import javax.servlet.http.HttpServletRequest;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.List;
 
 /**
  * BEST Engineering Marathon 2014
@@ -28,21 +34,30 @@ public class EntryPointController {
     @Autowired
     private ReturningService returningService;
 
-    @RequestMapping("/greeting")
+    @RequestMapping("/query/{query}")
     @ResponseBody
-    public ResponseEntity<SimpleResponse> greeting(@RequestParam(value = "query") String query, @RequestParam(value = "callback") String callback) {
+    public ResponseEntity<SimpleResponse> requestInfo(@PathVariable(value = "query") String query, @RequestParam(value = "callback") String callback) {
 
         SimpleResponse simpleResponse = new SimpleResponse("Da");
-        returningService.computeResult(query, callback);
-        return new ResponseEntity<SimpleResponse>(simpleResponse, HttpStatus.OK);
+        ResponseEntity<SimpleResponse>responseEntity;
+
+        try {
+            returningService.computeResult(query, callback);
+            responseEntity = new ResponseEntity<SimpleResponse>(new SimpleResponse("Your request will be processed. We'll get back to you"), HttpStatus.OK);
+        } catch (InvaliCallBackException e) {
+            responseEntity = new ResponseEntity<SimpleResponse>(new SimpleResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
+        } catch (RandomServerException e) {
+            responseEntity = new ResponseEntity<SimpleResponse>(new SimpleResponse(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return responseEntity;
 
     }
 
-    @RequestMapping("/callback")
+    @RequestMapping(value = "/callback", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<SimpleResponse> greeting(@RequestParam(value = "query") String query) {
+    public ResponseEntity<SimpleResponse> dummyCallback(@RequestBody List<ShowInfo> showInfos) {
 
-        SimpleResponse simpleResponse = new SimpleResponse(query);
+        SimpleResponse simpleResponse = new SimpleResponse(String.valueOf(showInfos.size()));
         logger.info("i have been called back");
         return new ResponseEntity<SimpleResponse>(simpleResponse, HttpStatus.OK);
 

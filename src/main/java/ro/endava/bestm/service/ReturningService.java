@@ -1,5 +1,8 @@
 package ro.endava.bestm.service;
 
+import ro.endava.bestm.exception.InvaliCallBackException;
+import ro.endava.bestm.exception.RandomServerException;
+
 /**
  * BEST Engineering Marathon 2014
  * Endava Federated Search, Returning(Callback) System
@@ -9,5 +12,7 @@ package ro.endava.bestm.service;
  */
 public interface ReturningService {
 
-    public void computeResult(String query, String callback);
+    public void computeResult(String query, String callback) throws InvaliCallBackException, RandomServerException;
+
+
 }
