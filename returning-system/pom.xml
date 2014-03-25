@@ -35,13 +35,13 @@
         <dependency>
             <groupId>com.mangofactory</groupId>
             <artifactId>swagger-springmvc</artifactId>
-            <version>0.6.0</version>
+            <version>0.5.2</version>
         </dependency>
 
     </dependencies>
 
     <properties>
-        <start-class>ro.endava.bestm.entry.Application</start-class>
+        <start-class>com.endava.TvRageSearchEngine</start-class>
         <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
     </properties>
 
