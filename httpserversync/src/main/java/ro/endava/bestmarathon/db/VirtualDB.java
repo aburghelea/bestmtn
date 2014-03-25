@@ -6,8 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ro.endava.bestmarathon.domain.TrackTVEntry;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.*;
 
 import static ro.endava.bestmarathon.utils.Utils.split;
@@ -30,7 +29,7 @@ public class VirtualDB {
     private VirtualDB() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
-            InputStream jsonStream = VirtualDB.class.getResourceAsStream("/sample.json");
+            InputStream jsonStream = VirtualDB.class.getResourceAsStream("/tracktv.json");
             if (jsonStream != null) {
                 try {
                     data = objectMapper.readValue(jsonStream, new TypeReference<List<TrackTVEntry>>() {
@@ -44,8 +43,17 @@ public class VirtualDB {
             for (TrackTVEntry trackTVEntry : data) {
                 Set<String> words = new HashSet<>();
                 words.addAll(split(trackTVEntry.getTitle()));
+                words.addAll(split(String.valueOf(trackTVEntry.getYear())));
+                words.addAll(split(trackTVEntry.getUrl()));
                 words.addAll(split(trackTVEntry.getOverview()));
                 words.addAll(split(trackTVEntry.getCountry()));
+                words.addAll(split(trackTVEntry.getStatus()));
+                words.addAll(split(trackTVEntry.getNetwork()));
+                words.addAll(split(trackTVEntry.getAirDay()));
+                words.addAll(split(trackTVEntry.getAirTime()));
+                words.addAll(split(trackTVEntry.getImdbId()));
+                words.addAll(split(trackTVEntry.getTvRageId()));
+                words.addAll(trackTVEntry.getGenres());
                 index.add(words);
             }
         } catch (IOException e) {
