@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>4903</showid>
+<showname>Project Runway</showname>
+<showlink>http://tvrage.com/Project_Runway</showlink>
+<seasons>13</seasons>
+<started>2004</started>
+<startdate>Dec/01/2004</startdate>
+<ended></ended>
+<origin_country>US</origin_country>
+<status>Returning Series</status>
+<classification>Reality</classification>
+<genres><genre>Family</genre></genres>
+<runtime>90</runtime>
+<network  country="US">Lifetime</network>
+<airtime>21:00</airtime>
+<airday>Thursday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka country="RU">Проект Подиум</aka></akas>
+</Showinfo>

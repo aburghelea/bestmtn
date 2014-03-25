@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>2882</showid>
+<showname>Boston Legal</showname>
+<showlink>http://tvrage.com/Boston_Legal</showlink>
+<seasons>5</seasons>
+<started>2004</started>
+<startdate>Oct/03/2004</startdate>
+<ended>Dec/08/2008</ended>
+<origin_country>US</origin_country>
+<status>Canceled/Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Comedy</genre><genre>Crime</genre><genre>Drama</genre><genre>Mystery</genre></genres>
+<runtime>60</runtime>
+<network  country="US">ABC</network>
+<airtime>22:00</airtime>
+<airday>Monday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka attr="Working Title" country="US">Fleet Street</aka><aka country="BR">Justiça Sem Limites</aka><aka attr="Working Title" country="US">The Practice: Fleet Street</aka></akas>
+</Showinfo>

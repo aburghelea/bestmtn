@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>21704</showid>
+<showname>Glee</showname>
+<showlink>http://tvrage.com/Glee</showlink>
+<seasons>5</seasons>
+<started>2009</started>
+<startdate>May/19/2009</startdate>
+<ended></ended>
+<origin_country>US</origin_country>
+<status>Returning Series</status>
+<classification>Scripted</classification>
+<genres><genre>Comedy</genre><genre>Music</genre></genres>
+<runtime>60</runtime>
+<network  country="US">FOX</network>
+<airtime>20:00</airtime>
+<airday>Tuesday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka country="RU">Losers</aka></akas>
+</Showinfo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>8081</showid>
+<showname>Jekyll</showname>
+<showlink>http://tvrage.com/Jekyll</showlink>
+<seasons>1</seasons>
+<started>2007</started>
+<startdate>Jun/16/2007</startdate>
+<ended>Jul/28/2007</ended>
+<origin_country>UK</origin_country>
+<status>Canceled/Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Drama</genre><genre>Horror/Supernatural</genre></genres>
+<runtime>60</runtime>
+<network  country="UK">BBC one</network>
+<airtime>21:00</airtime>
+<airday>Saturday</airday>
+<timezone>GMT+0 -DST</timezone>
+</Showinfo>

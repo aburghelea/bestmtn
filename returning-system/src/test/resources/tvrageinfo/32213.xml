@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>32213</showid>
+<showname>Hunted</showname>
+<showlink>http://tvrage.com/Hunted</showlink>
+<seasons>1</seasons>
+<started>2012</started>
+<startdate>Oct/04/2012</startdate>
+<ended></ended>
+<origin_country>UK</origin_country>
+<status>Ended</status>
+<classification>Scripted</classification>
+<genres><genre>Action</genre><genre>Drama</genre></genres>
+<runtime>60</runtime>
+<network  country="UK">BBC one</network>
+<airtime>21:00</airtime>
+<airday>Thursday</airday>
+<timezone>GMT+0 -DST</timezone>
+<akas><aka attr="Working title" country="US">Nemesis</aka></akas>
+</Showinfo>

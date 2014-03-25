@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Showinfo>
+<showid>3031</showid>
+<showname>Chappelle's Show</showname>
+<showlink>http://tvrage.com/Chappelles_Show</showlink>
+<seasons>3</seasons>
+<started>2003</started>
+<startdate>Jan/22/2003</startdate>
+<ended>Jul/23/2006</ended>
+<origin_country>US</origin_country>
+<status>Canceled/Ended</status>
+<classification>Variety</classification>
+<genres><genre>Comedy</genre></genres>
+<runtime>30</runtime>
+<network  country="US">Comedy Central</network>
+<airtime>22:00</airtime>
+<airday>Tuesday</airday>
+<timezone>GMT-5 -DST</timezone>
+<akas><aka attr="Season 3" country="US">Chappelle's Show-The Lost Episodes</aka></akas>
+</Showinfo>
