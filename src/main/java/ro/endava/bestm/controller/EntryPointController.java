@@ -15,6 +15,7 @@ import ro.endava.bestm.exception.RandomServerException;
 import ro.endava.bestm.service.ReturningService;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.HttpMethod;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -34,7 +35,7 @@ public class EntryPointController {
     @Autowired
     private ReturningService returningService;
 
-    @RequestMapping("/query/{query}")
+    @RequestMapping(value = "/query/{query}", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<SimpleResponse> requestInfo(@PathVariable(value = "query") String query, @RequestParam(value = "callback") String callback) {
 

@@ -1,7 +1,11 @@
 package ro.endava.bestm.config;
 
+import com.mangofactory.swagger.configuration.DefaultConfigurationModule;
+import com.mangofactory.swagger.configuration.DocumentationConfig;
+import com.mangofactory.swagger.configuration.ExtensibilityModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +29,7 @@ public class SpringConfiguration {
     @Value("${taskexecutor.corepoolsize}")
     private int corePoolSize;
     @Value("${taskexecutor.maxpoolsize}")
-    private int maxPoolSize ;
+    private int maxPoolSize;
     @Value("${taskexecutor.shutdownwait}")
     private boolean waitForJobsToCompleteOnShutdown;
 
@@ -47,5 +51,19 @@ public class SpringConfiguration {
         return new TvRageInfoContainerImpl("tvrage.json");
     }
 
+//    @Bean
+//    public DefaultConfigurationModule defaultConfigurationModule() {
+//        return new DefaultConfigurationModule();
+//    }
+//
+//    @Bean
+//    public ExtensibilityModule extensibilityModule() {
+//        return new ExtensibilityModule();
+//    }
+//
+//    @Bean
+//    public DocumentationConfig documentationConfig(){
+//        return new DocumentationConfig();
+//    }
 
 }
