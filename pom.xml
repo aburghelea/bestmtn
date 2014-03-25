@@ -11,6 +11,7 @@
 
     <modules>
         <module>search-provider-with-pooling</module>
+        <module>returning-system</module>
     </modules>
 
 </project>
