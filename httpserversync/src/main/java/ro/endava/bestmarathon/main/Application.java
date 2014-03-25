@@ -2,7 +2,10 @@ package ro.endava.bestmarathon.main;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import ro.endava.bestmarathon.db.VirtualDB;
 import ro.endava.bestmarathon.webserver.WebServer;
+
+import java.io.IOException;
 
 /**
  * Created by cosmin on 3/16/14.
@@ -22,8 +25,12 @@ public class Application {
      *
      * @param args
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         try {
+            LOGGER.info("Populating our virtual database with data...");
+            VirtualDB.getInstance();
+            LOGGER.info("Data has been loaded");
+            LOGGER.info("Starting web server...");
             WebServer webServer = new WebServer();
             webServer.start(getPort(args), NO_THREADS, QUEUE_CAPACITY);
         } catch (Exception e) {

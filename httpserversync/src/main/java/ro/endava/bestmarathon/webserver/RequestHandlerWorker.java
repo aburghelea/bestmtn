@@ -3,10 +3,11 @@ package ro.endava.bestmarathon.webserver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ro.endava.bestmarathon.http.*;
+import ro.endava.bestmarathon.service.ApplicationService;
+import ro.endava.bestmarathon.utils.HttpRequestBuilder;
+import ro.endava.bestmarathon.utils.HttpResponseWriter;
 
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.net.Socket;
 
 /**
@@ -25,18 +26,17 @@ public class RequestHandlerWorker implements Runnable {
 
     public void run() {
         try {
-            Thread.sleep(5000);
             HttpRequest httpRequest = HttpRequestBuilder.buildHttpRequest(socket.getInputStream());
-            HttpResponse httpResponse = HttpResponseBuilder.buildHttpResponse(httpRequest);
+            HttpResponse httpResponse = new ApplicationService().buildHttpResponse(httpRequest);
             HttpResponseWriter.writeOnSocketAndClose(socket, httpResponse);
         } catch (Exception e) {
             try {
-                HttpResponseWriter.writeOnSocketAndClose(socket, HttpResponseBuilder.buildInternalServerError());
+                HttpResponseWriter.writeOnSocketAndClose(socket,
+                        new ApplicationService().buildInternalServerErrorResponse());
             } catch (IOException e1) {
                 //
             }
             LOGGER.info("Runtime error. Cause: " + e.getMessage());
         }
     }
-
 }

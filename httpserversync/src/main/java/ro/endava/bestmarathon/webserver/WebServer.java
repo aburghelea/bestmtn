@@ -2,9 +2,8 @@ package ro.endava.bestmarathon.webserver;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import ro.endava.bestmarathon.http.HttpResponse;
-import ro.endava.bestmarathon.http.HttpResponseBuilder;
-import ro.endava.bestmarathon.http.HttpResponseWriter;
+import ro.endava.bestmarathon.service.ApplicationService;
+import ro.endava.bestmarathon.utils.HttpResponseWriter;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -23,6 +22,7 @@ public class WebServer extends Thread {
 
     /**
      * Starts the web server and listens for incoming requests
+     *
      * @param port
      * @param noThreads
      * @param queueCapacity
@@ -32,7 +32,6 @@ public class WebServer extends Thread {
         initializeExecutor(noThreads, queueCapacity);
         ServerSocket s = new ServerSocket(port);
         LOGGER.info("Synchronous Web Server started and listening on port " + port + " (press CTRL-C to quit)");
-
         while (true) {
             submit(s.accept());
         }
@@ -40,6 +39,7 @@ public class WebServer extends Thread {
 
     /**
      * Initialize the ExecutorService to set up the number of threads which wil handle requests
+     *
      * @param noThreads
      * @param queueCapacity
      */
@@ -52,6 +52,7 @@ public class WebServer extends Thread {
      * Submit the request received to the executor.
      * The concurrent request number is limited so RejectedExecutionException is thrown
      * when the maximum is reached. This will result in 503-Resource Not Available HTTP status
+     *
      * @param s
      * @throws IOException
      */
@@ -60,11 +61,13 @@ public class WebServer extends Thread {
             executor.submit(new RequestHandlerWorker(s));
         } catch (RejectedExecutionException e) {
             //Return 503 RESOURCE NOT AVAILABLE
-            HttpResponseWriter.writeOnSocketAndClose(s, HttpResponseBuilder.buildServiceUnavailable());
+            new HttpResponseWriter().writeOnSocketAndClose(s,
+                    new ApplicationService().buildServiceUnavailableResponse());
             LOGGER.info("We can't support so many connections");
         } catch (Exception e) {
             //Return 500 INTERNAL SERVER ERROR
-            HttpResponseWriter.writeOnSocketAndClose(s, HttpResponseBuilder.buildInternalServerError());
+            new HttpResponseWriter().writeOnSocketAndClose(s,
+                    new ApplicationService().buildInternalServerErrorResponse());
             LOGGER.info("Runtime error. Cause: " + e.getMessage());
         }
     }
