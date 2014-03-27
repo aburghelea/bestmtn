@@ -146,7 +146,7 @@ public class IMDBResource implements InitializingBean {
         }
         if (queryInfo.readyTimestamp > timeService.currentTimeMillis()) {
             throw new WebApplicationException(Response.status(Response.Status.ACCEPTED)
-                    .entity(new ErrorResponse("we're not ready yet, give us some more time")).type(MediaType.APPLICATION_JSON).build());
+                    .entity(new ErrorResponse("we're not ready yet, give us some more time", request.getRequestURL().toString())).type(MediaType.APPLICATION_JSON).build());
         }
         return queryService.find(queryInfo.query);
     }
