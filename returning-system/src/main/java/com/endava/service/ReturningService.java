@@ -1,6 +1,6 @@
 package com.endava.service;
 
-import com.endava.exception.InvaliCallBackException;
+import com.endava.exception.InvalidCallBackException;
 import com.endava.exception.RandomServerException;
 
 /**
@@ -12,7 +12,7 @@ import com.endava.exception.RandomServerException;
  */
 public interface ReturningService {
 
-    public void computeResult(String query, String callback) throws InvaliCallBackException, RandomServerException;
+    public void computeResult(String query, String callback) throws InvalidCallBackException, RandomServerException;
 
 
 }

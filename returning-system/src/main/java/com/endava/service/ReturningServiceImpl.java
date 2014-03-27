@@ -1,11 +1,12 @@
 package com.endava.service;
 
+import com.endava.exception.InvalidCallBackException;
 import com.endava.worker.QueryTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
-import com.endava.datacontainer.DataContainer;import com.endava.exception.InvaliCallBackException;
+import com.endava.datacontainer.DataContainer;
 import com.endava.exception.RandomServerException;
 
 import java.net.MalformedURLException;
@@ -32,7 +33,7 @@ public class ReturningServiceImpl implements ReturningService {
     private int failRate;
 
     @Override
-    public void computeResult(String query, String callback) throws InvaliCallBackException, RandomServerException {
+    public void computeResult(String query, String callback) throws InvalidCallBackException, RandomServerException {
         validateCallback(callback);
         simulateFail();
         taskExecutor.execute(new QueryTask(query, callback, dataContainer));
@@ -45,11 +46,11 @@ public class ReturningServiceImpl implements ReturningService {
         }
     }
 
-    private void validateCallback(String callback) throws InvaliCallBackException {
+    private void validateCallback(String callback) throws InvalidCallBackException {
         try {
             URL url = new URL(callback);
         } catch (MalformedURLException e) {
-            throw new InvaliCallBackException("Try a valid callback buddy. Don't forget to have it URL Encoded");
+            throw new InvalidCallBackException("Try a valid callback buddy. Don't forget to have it URL Encoded");
         }
 
 

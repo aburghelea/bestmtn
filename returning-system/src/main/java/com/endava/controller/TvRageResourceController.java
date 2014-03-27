@@ -1,5 +1,8 @@
 package com.endava.controller;
 
+import com.endava.exception.InvalidCallBackException;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mangofactory.swagger.annotations.ApiError;
 import com.mangofactory.swagger.annotations.ApiErrors;
 import com.wordnik.swagger.annotations.Api;
@@ -13,10 +16,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import com.endava.response.SimpleResponse;
 import com.endava.entity.ShowInfo;
-import com.endava.exception.InvaliCallBackException;
 import com.endava.exception.RandomServerException;
 import com.endava.service.ReturningService;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -54,7 +57,7 @@ public class TvRageResourceController {
         try {
             returningService.computeResult(query, callback);
             responseEntity = new ResponseEntity<SimpleResponse>(new SimpleResponse("Your request will be processed. We'll get back to you"), HttpStatus.OK);
-        } catch (InvaliCallBackException e) {
+        } catch (InvalidCallBackException e) {
             responseEntity = new ResponseEntity<SimpleResponse>(new SimpleResponse(e.getMessage()), HttpStatus.BAD_REQUEST);
         } catch (RandomServerException e) {
             responseEntity = new ResponseEntity<SimpleResponse>(new SimpleResponse(e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
@@ -70,10 +73,19 @@ public class TvRageResourceController {
             notes = "This is how the callback getting the results can look like",
             responseClass = "SimpleResponse"
     )
-    public ResponseEntity<SimpleResponse> dummyCallback(@RequestBody List<ShowInfo> showInfos) {
+    public ResponseEntity<SimpleResponse> dummyCallback(@RequestBody List<ShowInfo> showInfos) throws IOException {
 
         SimpleResponse simpleResponse = new SimpleResponse(String.valueOf(showInfos.size()));
-        logger.info("i have been called back");
+		if (showInfos != null && showInfos.size() > 0) {
+			StringBuilder buff = new StringBuilder();
+			buff.append("I have been called back with the following ").append(showInfos.size()).append(" shows:\n")
+					.append(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+					.append("\n" + new ObjectMapper().writer(new DefaultPrettyPrinter()).writeValueAsString(showInfos) + "\n")
+					.append("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+			logger.info(buff.toString());
+		} else {
+			logger.info("I have been called back but you know what? there isn't much info about your query :(");
+		}
         return new ResponseEntity<SimpleResponse>(simpleResponse, HttpStatus.OK);
 
     }

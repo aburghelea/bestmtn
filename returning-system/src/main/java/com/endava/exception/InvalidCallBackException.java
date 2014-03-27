@@ -7,10 +7,10 @@ package com.endava.exception;
  * @author <a href="mailto:alexandru.burghelea@endava.com">Alexandru BURGHELEA</a>
  * @since 3/24/14
  */
-public class InvaliCallBackException extends Exception {
+public class InvalidCallBackException extends Exception {
 
 
-    public InvaliCallBackException(String message) {
+    public InvalidCallBackException(String message) {
         super(message);
     }
 
