@@ -8,6 +8,7 @@ import ro.endava.bestmarathon.utils.HttpResponseWriter;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Date;
 import java.util.concurrent.*;
 
 /**
@@ -63,12 +64,12 @@ public class WebServer extends Thread {
             //Return 503 RESOURCE NOT AVAILABLE
             new HttpResponseWriter().writeOnSocketAndClose(s,
                     new ApplicationService().buildServiceUnavailableResponse());
-            LOGGER.info("We can't support so many connections");
+            LOGGER.info("[{}] Ma' friend, we can't support so many connections... If you continue like this you might put the server down :(", new Date());
         } catch (Exception e) {
             //Return 500 INTERNAL SERVER ERROR
             new HttpResponseWriter().writeOnSocketAndClose(s,
                     new ApplicationService().buildInternalServerErrorResponse());
-            LOGGER.info("Runtime error. Cause: " + e.getMessage());
+            LOGGER.error("Runtime error. Cause: " + e.getMessage(), e);
         }
     }
 }

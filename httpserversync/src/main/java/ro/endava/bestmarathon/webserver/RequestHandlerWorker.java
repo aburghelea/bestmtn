@@ -36,7 +36,8 @@ public class RequestHandlerWorker implements Runnable {
             } catch (IOException e1) {
                 //
             }
-            LOGGER.info("Runtime error. Cause: " + e.getMessage());
+
+            LOGGER.error("Runtime error. Cause: " + e.getMessage(), e);
         }
     }
 }
