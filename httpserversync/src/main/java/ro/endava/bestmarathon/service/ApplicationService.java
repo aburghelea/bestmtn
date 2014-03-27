@@ -2,6 +2,8 @@ package ro.endava.bestmarathon.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ro.endava.bestmarathon.domain.QueryResult;
+import ro.endava.bestmarathon.domain.TrackTVEntry;
 import ro.endava.bestmarathon.http.HttpRequest;
 import ro.endava.bestmarathon.http.HttpResponse;
 import ro.endava.bestmarathon.http.HttpStatus;
@@ -13,6 +15,7 @@ import java.net.URISyntaxException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by cosmin on 3/25/14.
@@ -46,7 +49,9 @@ public class ApplicationService {
         switch (status) {
             case _200:
                 String query = URLDecoder.decode(new URI(httpRequest.getUri()).getQuery(), CHARSET);
-                body = objectMapper.writeValueAsString(queryService.findByQuery(query.substring(6))).getBytes();
+                Set<TrackTVEntry> querySet = queryService.findByQuery(query.substring(6));
+                QueryResult queryResult = new QueryResult(querySet, querySet.size());
+                body = objectMapper.writeValueAsString(queryResult).getBytes();
                 break;
             case _400:
                 body = buildBadRequestBody().getBytes();

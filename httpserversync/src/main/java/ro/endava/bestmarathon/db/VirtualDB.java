@@ -9,6 +9,7 @@ import ro.endava.bestmarathon.domain.TrackTVEntry;
 import java.io.*;
 import java.util.*;
 
+import static ro.endava.bestmarathon.utils.Utils.checkCollection;
 import static ro.endava.bestmarathon.utils.Utils.split;
 
 /**
@@ -44,7 +45,6 @@ public class VirtualDB {
                 Set<String> words = new HashSet<>();
                 words.addAll(split(trackTVEntry.getTitle()));
                 words.addAll(split(String.valueOf(trackTVEntry.getYear())));
-                words.addAll(split(trackTVEntry.getUrl()));
                 words.addAll(split(trackTVEntry.getOverview()));
                 words.addAll(split(trackTVEntry.getCountry()));
                 words.addAll(split(trackTVEntry.getStatus()));
@@ -53,7 +53,7 @@ public class VirtualDB {
                 words.addAll(split(trackTVEntry.getAirTime()));
                 words.addAll(split(trackTVEntry.getImdbId()));
                 words.addAll(split(trackTVEntry.getTvRageId()));
-                words.addAll(trackTVEntry.getGenres());
+                words.addAll(checkCollection(trackTVEntry.getGenres()));
                 index.add(words);
             }
         } catch (IOException e) {

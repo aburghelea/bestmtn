@@ -1,5 +1,6 @@
 package ro.endava.bestmarathon.utils;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.StringTokenizer;
@@ -19,6 +20,16 @@ public class Utils {
             String word = tokenizer.nextToken();
             if (word.length() > 2) {
                 result.add(word.toLowerCase());
+            }
+        }
+        return result;
+    }
+
+    public static Set<String> checkCollection(Collection<String> collection) {
+        Set<String> result = new HashSet<>();
+        for (String s : collection) {
+            if (s.length() > 2) {
+                result.add(s.toLowerCase());
             }
         }
         return result;
