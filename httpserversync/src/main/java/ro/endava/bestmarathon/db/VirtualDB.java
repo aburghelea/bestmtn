@@ -42,6 +42,7 @@ public class VirtualDB {
 
             index = new ArrayList<>(data.size());
             for (TrackTVEntry trackTVEntry : data) {
+                LOGGER.info("Indexing tv show [" + trackTVEntry.getTitle() + "]");
                 Set<String> words = new HashSet<>();
                 words.addAll(split(trackTVEntry.getTitle()));
                 words.addAll(split(String.valueOf(trackTVEntry.getYear())));
