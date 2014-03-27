@@ -1,7 +1,11 @@
 package com.endava.springboot;
 
+import org.apache.commons.io.IOUtils;
+
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintStream;
+import java.io.StringWriter;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -24,10 +28,11 @@ public class TvrageBanner {
     public TvrageBanner() {
         URI banner = null;
         try {
-            banner = this.getClass().getResource("/banner.txt").toURI();
-            text = Charset.defaultCharset().decode(ByteBuffer.wrap(Files.readAllBytes(Paths.get(banner)))).toString();
-        } catch (URISyntaxException e) {
-            text = "Best 2014. Tvrage Search Engine";
+            InputStream stream = this.getClass().getResourceAsStream("/banner.txt");
+            StringWriter writer = new StringWriter();
+            IOUtils.copy(stream,writer);
+            text = writer.toString();
+//            text = Charset.defaultCharset().decode(ByteBuffer.wrap(Files.readAllBytes(Paths.get(banner)))).toString();
         } catch (IOException e) {
             text = "Best 2014. Tvrage Search Engine";
         }

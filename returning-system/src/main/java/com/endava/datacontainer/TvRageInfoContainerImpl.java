@@ -56,7 +56,7 @@ public class TvRageInfoContainerImpl implements DataContainer {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         objectMapper.configure(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY, true);
-        InputStream jsonStream = getClass().getResourceAsStream("/tvrage.json");
+        InputStream jsonStream = getClass().getResourceAsStream(name);
 
         if (jsonStream != null) {
             try {
