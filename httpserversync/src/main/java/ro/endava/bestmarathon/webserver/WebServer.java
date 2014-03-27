@@ -52,7 +52,7 @@ public class WebServer extends Thread {
     /**
      * Submit the request received to the executor.
      * The concurrent request number is limited so RejectedExecutionException is thrown
-     * when the maximum is reached. This will result in 503-Resource Not Available HTTP status
+     * when the maximum is reached. This will result in 503-SERVICE UNAVAILABLE HTTP status
      *
      * @param s
      * @throws IOException
@@ -60,11 +60,12 @@ public class WebServer extends Thread {
     private void submit(Socket s) throws IOException {
         try {
             executor.submit(new RequestHandlerWorker(s));
+            LOGGER.info("Server called...");
         } catch (RejectedExecutionException e) {
-            //Return 503 RESOURCE NOT AVAILABLE
+            //Return 503 SERVICE UNAVAILABLE
             new HttpResponseWriter().writeOnSocketAndClose(s,
                     new ApplicationService().buildServiceUnavailableResponse());
-            LOGGER.info("[{}] Ma' friend, we can't support so many connections... If you continue like this you might put the server down :(", new Date());
+            LOGGER.info("Ma' friend, we can't support so many connections... If you continue like this you might put the server down :(");
         } catch (Exception e) {
             //Return 500 INTERNAL SERVER ERROR
             new HttpResponseWriter().writeOnSocketAndClose(s,

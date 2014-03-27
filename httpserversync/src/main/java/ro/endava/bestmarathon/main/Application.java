@@ -34,7 +34,7 @@ public class Application {
             WebServer webServer = new WebServer();
             webServer.start(getPort(args), NO_THREADS, QUEUE_CAPACITY);
         } catch (Exception e) {
-            LOGGER.info("Error starting synchronous web server. Cause: " + e.getMessage());
+            LOGGER.error("Error starting synchronous web server. Cause: " + e.getMessage());
         }
     }
 

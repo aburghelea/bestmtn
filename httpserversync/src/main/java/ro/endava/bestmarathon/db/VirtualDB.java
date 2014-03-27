@@ -58,7 +58,7 @@ public class VirtualDB {
                 index.add(words);
             }
         } catch (IOException e) {
-            LOGGER.info("Oups..Our database is not properly built. Cause: " + e.getMessage());
+            LOGGER.error("Oups..Our database is not properly built. Cause: " + e.getMessage());
         }
     }
 
