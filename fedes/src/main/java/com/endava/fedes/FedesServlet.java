@@ -21,6 +21,9 @@ public class FedesServlet extends HttpServlet {
 
 		//do the search here
 
+		//end the search here
+
+		request.setAttribute("results", "one result");
 		request.getRequestDispatcher("/WEB-INF/results.jsp").forward(request, response);
 	}
 }
