@@ -17,7 +17,7 @@ public class Application {
 
     private final static int NO_THREADS = 2;
     private final static int QUEUE_CAPACITY = 1;
-    private final static int DEFAULT_PORT = 8000;
+    private final static int DEFAULT_PORT = 8081;
     public static final String PORT_SPECIFIER_ARGS = "-p";
 
     /**
