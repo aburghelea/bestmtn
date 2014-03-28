@@ -1,14 +1,23 @@
 # Fedes - a Federated Search Engine
 
-This is the starting point for  the federated search engine. A servlet and 2 jsp pages are provided.
+This is the starting point for  the federated search engine.
 
-### Build and run tomcat
-To see the changes you have made, run the following command:
+
+### Build and run
+
+To build and deploy the application, run the following command:
 
  ```
  mvn clean install tomcat7:run
 
  ```
+
+ To access the application, type in the browser the path
+
+  ```
+  localhost:8080/fedes
+
+  ```
 
 ### Possible scenario
 
