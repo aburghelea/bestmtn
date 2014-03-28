@@ -8,6 +8,7 @@ Asynchronous REST service using a client provided callback:
 ### Building
 
 * package the search engine
+
 ```
 mvn clean package
 ```
