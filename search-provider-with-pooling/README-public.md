@@ -12,7 +12,7 @@ Asynchronous REST service using pooling:
 
 ### Running
 ```
-> java -jar target/search-provider-with-pooling.jar server conf/imbd-search-node1.yaml
+> java -jar search-provider-with-pooling.jar server conf/imbd-search-node1.yaml
 ```
 
 ### Using
