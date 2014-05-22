@@ -21,13 +21,13 @@ The engine can be accessed using GET request, either from java code, a web brows
 Command-line examples:
 
 ```
-> curl -XGET http://localhost:8080/movies/<query>
-> curl -XGET http://localhost:8090/movies/results/<reference>
+> curl -XGET http://localhost:8082/movies/<query>
+> curl -XGET http://localhost:8082/movies/results/<reference>
 ```
 The <reference> is obtained from the "Location" response header of the initial query (assuming a 303 status code).
 
 
 ### REST API
 The REST API documentation is available at ```http://localhost:8080/docs/```
-You can also use Swagger at [swagger.wordnik.com](http://swagger.wordnik.com/) using ```http://localhost:8080/api-docs```.
+You can also use Swagger at [swagger.wordnik.com](http://swagger.wordnik.com/) using ```http://localhost:8082/api-docs```.
 
